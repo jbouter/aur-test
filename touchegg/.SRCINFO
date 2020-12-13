@@ -11,6 +11,7 @@ pkgbase = touchegg
 	depends = cairo
 	depends = systemd-libs
 	depends = libx11
+	depends = libxi
 	depends = libxrandr
 	depends = libxtst
 	depends = pugixml
