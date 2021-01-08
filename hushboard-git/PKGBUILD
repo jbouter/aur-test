@@ -34,4 +34,13 @@ package()
 {
   cd "$_pkgname"
   python setup.py install --root="$pkgdir"
+
+  # Install the icon
+  install -Dm644 "$srcdir/$_pkgname/hushboard-512.png" "$pkgdir/usr/share/icons/hushboard-512.png"
+
+  # Replace the icon path from SNAP to system location
+  sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/hushboard-512.png/g' "$srcdir/$_pkgname/snap/gui/hushboard.desktop"
+
+  # Install the desktop file
+  install -Dm644 "$srcdir/$_pkgname/snap/gui/hushboard.desktop" "$pkgdir/usr/share/applications/hushboard.desktop"
 }
