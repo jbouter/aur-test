@@ -18,6 +18,7 @@ jobs:
         include:
           - pkg: touchegg
           - pkg: salt-lint
+          - pkg: hushboard-git
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
